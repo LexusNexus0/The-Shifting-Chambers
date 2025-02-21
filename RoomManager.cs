@@ -6,7 +6,7 @@ public class RoomManager : MonoBehaviour
 {
     public bool StartRandomiser = false;
     public GameObject player;
-    public string roomNumber = "17";
+    public string roomNumber = "";
     public bool enterRoom = false;
 
     void Awake()
