@@ -30,15 +30,45 @@ public class DoorWork : MonoBehaviour
         }
         else if (other.tag == "DoorUp")
         {
-            transform.position = new Vector3(transform.position.x, -5.5f, transform.position.z);
+            if (!string.IsNullOrEmpty(DoorUpCode))
+            {
+                transform.position = new Vector3(transform.position.x, -4, transform.position.z);
+                SceneManager.LoadScene(sceneName: "Room" + DoorUpCode);
+                randomiser.GetComponent<RoomManager>().roomNumber = DoorUpCode;
+                randomiser.GetComponent<RoomManager>().enterRoom = true;
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, -5.5f, transform.position.z);
+            }
         }
         else if (other.tag == "DoorRight")
         {
-            transform.position = new Vector3(-9, transform.position.y, transform.position.z);
+            if (!string.IsNullOrEmpty(DoorRightCode))
+            {
+                transform.position = new Vector3(-8, transform.position.y, transform.position.z);
+                SceneManager.LoadScene(sceneName: "Room" + DoorRightCode);
+                randomiser.GetComponent<RoomManager>().roomNumber = DoorRightCode;
+                randomiser.GetComponent<RoomManager>().enterRoom = true;
+            }
+            else
+            {
+                transform.position = new Vector3(-9, transform.position.y, transform.position.z);
+            }
         }
         else if (other.tag == "DoorDown")
         {
-            transform.position = new Vector3(transform.position.x, 5.5f, transform.position.z);
+            if (!string.IsNullOrEmpty(DoorDownCode))
+            {
+                transform.position = new Vector3(transform.position.x, 4, transform.position.z);
+                SceneManager.LoadScene(sceneName: "Room" + DoorDownCode);
+                randomiser.GetComponent<RoomManager>().roomNumber = DoorDownCode;
+                randomiser.GetComponent<RoomManager>().enterRoom = true;
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, 5.5f, transform.position.z);
+            }
         }
     }
 }
