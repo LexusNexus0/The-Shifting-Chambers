@@ -9,11 +9,22 @@ public class DoorWork : MonoBehaviour
     public string DoorUpCode = string.Empty;
     public string DoorRightCode = string.Empty;
     public string DoorDownCode = string.Empty;
+    public string location = string.Empty;
 
     public GameObject randomiser;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // New room gen stuff
+        Debug.Log(other.tag);
+        location = other.tag;
+        if (location[2].Equals('L'))
+        {
+            transform.position = new Vector3(-8, transform.position.y, transform.position.z);
+            SceneManager.LoadScene(sceneName: "Room" + location[0] + location[1]);
+        }
+
+        // Old room gen stuff
         if (other.tag == "DoorLeft")
         {
             if (!string.IsNullOrEmpty(DoorLeftCode))
