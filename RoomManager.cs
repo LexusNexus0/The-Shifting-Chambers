@@ -9,6 +9,30 @@ public class RoomManager : MonoBehaviour
     public string roomNumber = "";
     public bool enterRoom = false;
 
+    // Finish entering all the rooms from table
+    public string[,] rooms = {
+        { "", "", "17L", "" },
+        { "", "", "02L", "07U" }, 
+        { "01R", "", "03L", "08U1" }, 
+        { "02R", "", "", "" }, 
+        { "", "", "", "08U2" }, 
+        { "", "", "", "09U" }, 
+        { "", "", "07L", "10U" },
+        { "06R", "01D", "", "" },
+        { "02D", "04D", "09L", "12U" },
+        { "08R", "05D", "", "" },
+        { "", "06D", "11L", "" },
+        { "10R", "", "12L", "14U" },
+        { "11R", "08D", "", "" },
+        { "", "", "14L", "16U" },
+        { "13R", "11D", "15L", "17U" },
+        { "14R", "", "", "" },
+        { "", "13D", "17L", "" },
+        { "16R", "14D", "18L", "" },
+        { "17R", "", "19L", "" },
+        { "18R", "", "", "" }
+    };
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
