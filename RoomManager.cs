@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public bool StartRandomiser = false;
+    public static bool StartRandomiser = false;
     public GameObject player;
     public string roomNumber = "";
     public bool enterRoom = false;
 
     // Finish entering all the rooms from table
-    public string[,] rooms = {
+    public static string[,] rooms = {
         { "", "", "17L", "" },
         { "", "", "02L", "07U" }, 
         { "01R", "", "03L", "08U1" }, 
@@ -33,118 +33,19 @@ public class RoomManager : MonoBehaviour
         { "18R", "", "", "" }
     };
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    public static string[] leftDoors = { "02L", "03L", "07L", "09L", "11L", "12L", "14L", "15L", "17L", "18L", "19L" };
+    public static string[] upDoors = { "07U", "08U1", "08U2", "09U", "10U", "12U", "14U", "16U", "17U" };
+    public static string[] rightDoors = { "01R", "02R", "06R", "08R", "10R", "11R", "13R", "14R", "16R", "17R", "18R" };
+    public static string[] downDoors = { "01D", "02D", "04", "05", "06D", "08D", "11D", "13D", "14D" };
 
-    // Start is called before the first frame update
-    void Start()
+    public static void clearRooms()
     {
-        enterRoom = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!StartRandomiser && enterRoom)
+        for (int i = 0; i < rooms.GetLength(0); i++)
         {
-            Debug.Log("Room number: " + roomNumber);
-            switch (roomNumber)
+            for (int j = 0; j < rooms.GetLength(1); j++)
             {
-                case "1":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "2";
-                    player.GetComponent<DoorWork>().DoorDownCode = "7";
-                    break;
-                case "2":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "1";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "3";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "3":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "2";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "6":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "7";
-                    player.GetComponent<DoorWork>().DoorDownCode = "10";
-                    break;
-                case "7":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "6";
-                    player.GetComponent<DoorWork>().DoorUpCode = "1";
-                    player.GetComponent<DoorWork>().DoorRightCode = "";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "10":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "";
-                    player.GetComponent<DoorWork>().DoorUpCode = "6";
-                    player.GetComponent<DoorWork>().DoorRightCode = "11";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "11":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "10";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "12";
-                    player.GetComponent<DoorWork>().DoorDownCode = "14";
-                    break;
-                case "12":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "11";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "13":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "14";
-                    player.GetComponent<DoorWork>().DoorDownCode = "16";
-                    break;
-                case "14":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "13";
-                    player.GetComponent<DoorWork>().DoorUpCode = "11";
-                    player.GetComponent<DoorWork>().DoorRightCode = "15";
-                    player.GetComponent<DoorWork>().DoorDownCode = "17";
-                    break;
-                case "15":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "14";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "16":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "";
-                    player.GetComponent<DoorWork>().DoorUpCode = "13";
-                    player.GetComponent<DoorWork>().DoorRightCode = "17";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "17":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "16";
-                    player.GetComponent<DoorWork>().DoorUpCode = "14";
-                    player.GetComponent<DoorWork>().DoorRightCode = "18";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "18":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "17";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "19";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
-                case "19":
-                    player.GetComponent<DoorWork>().DoorLeftCode = "18";
-                    player.GetComponent<DoorWork>().DoorUpCode = "";
-                    player.GetComponent<DoorWork>().DoorRightCode = "";
-                    player.GetComponent<DoorWork>().DoorDownCode = "";
-                    break;
+                rooms[i, j] = "";
             }
-
-            enterRoom = false;
         }
     }
 }
