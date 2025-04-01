@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,5 +26,10 @@ public class PlayerMovement : MonoBehaviour
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         player.velocity = movementDirection * speed;
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            SceneManager.LoadScene(sceneName: "Room05");
+        }
     }
 }

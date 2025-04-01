@@ -18,9 +18,21 @@ public class GoldTake : MonoBehaviour
         
     }
 
+    public void TakeGold()
+    {
+        GoldQuestion.SetActive(false);
+        RoomManager.clearRooms();
+        Debug.Log("Gold taken.");
+        RoomManager.StartRandomiser = true;
+        RoomManager.generateRandomDoorway();
+        this.gameObject.SetActive(false);
+    }
+
+
     public void NotTakeGold()
     {
-
+        GoldQuestion.SetActive(false);
+        Debug.Log("Gold left");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
