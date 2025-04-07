@@ -5,17 +5,11 @@ using UnityEngine;
 public class GoldTake : MonoBehaviour
 {
     public GameObject GoldQuestion;
+    public GameObject player;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void TakeGold()
@@ -23,8 +17,8 @@ public class GoldTake : MonoBehaviour
         GoldQuestion.SetActive(false);
         RoomManager.clearRooms();
         Debug.Log("Gold taken.");
-        RoomManager.StartRandomiser = true;
         RoomManager.generateRandomDoorway();
+        player.GetComponent<RandomManager>().isRandom = true;
         this.gameObject.SetActive(false);
     }
 
