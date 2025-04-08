@@ -72,25 +72,25 @@ public class RoomManager : MonoBehaviour
                 {
                     if (j == 0)
                     {
-                        int rNum = Random.Range(0, rightDoors.Count - 1);
+                        int rNum = Random.Range(0, rightDoors.Count);
                         rooms[i, j] = rightDoors[rNum];
                         rightDoors.RemoveAt(rNum);
                     }
                     else if (j == 1) 
                     {
-                        int rNum = Random.Range(0, downDoors.Count - 1);
+                        int rNum = Random.Range(0, downDoors.Count);
                         rooms[i, j] = downDoors[rNum];
                         downDoors.RemoveAt(rNum);
                     }
                     else if (j == 2)
                     {
-                        int rNum = Random.Range(0, leftDoors.Count - 1);
+                        int rNum = Random.Range(0, leftDoors.Count);
                         rooms[i, j] = leftDoors[rNum];
                         leftDoors.RemoveAt(rNum);
                     }
                     else if (j == 3)
                     {
-                        int rNum = Random.Range(0, upDoors.Count - 1);
+                        int rNum = Random.Range(0, upDoors.Count);
                         rooms[i, j] = upDoors[rNum];
                         upDoors.RemoveAt(rNum);
                     }
@@ -99,19 +99,19 @@ public class RoomManager : MonoBehaviour
                 {
                     if (j == 0 || j == 1)
                     {
-                        int rNum = Random.Range(0, downDoors.Count - 1);
+                        int rNum = Random.Range(0, downDoors.Count);
                         rooms[i, j] = downDoors[rNum];
                         downDoors.RemoveAt(rNum);
                     }
                     else if (j == 2)
                     {
-                        int rNum = Random.Range(0, leftDoors.Count - 1);
+                        int rNum = Random.Range(0, leftDoors.Count);
                         rooms[i, j] = leftDoors[rNum];
                         leftDoors.RemoveAt(rNum); 
                     }
                     else if (j == 3)
                     {
-                        int rNum = Random.Range(0, upDoors.Count - 1);
+                        int rNum = Random.Range(0, upDoors.Count);
                         rooms[i, j] = upDoors[rNum];
                         upDoors.RemoveAt(rNum);
                     }
@@ -120,19 +120,15 @@ public class RoomManager : MonoBehaviour
                 {
                     if (j == 0)
                     {
-                        int rNum = Random.Range(0, secretRDoors.Count - 1);
+                        int rNum = Random.Range(0, secretRDoors.Count);
                         rooms[i, j] = secretRDoors[rNum];
                         secretRDoors.RemoveAt(rNum);
                     }
                     else if (j == 2)
                     {
-                        int rNum = Random.Range(0, secretLDoors.Count - 1);
+                        int rNum = Random.Range(0, secretLDoors.Count);
                         rooms[i, j] = secretLDoors[rNum];
                         secretLDoors.RemoveAt(rNum);
-                    }
-                    else
-                    {
-                        Debug.Log("There is an error with secret rooms.");
                     }
                 }
             }
@@ -158,6 +154,6 @@ public class RoomManager : MonoBehaviour
     //Do this later, gl it's making randomise rooms more effecient.
     public static void getRoom(List<string> locations)
     {
-        int rNum = Random.Range(0, locations.Count - 1);
+        int rNum = Random.Range(0, locations.Count);
     }
 }
