@@ -5,28 +5,29 @@ using UnityEngine;
 public class ReadSign : MonoBehaviour
 {
     public GameObject signText;
+    public bool playerColliding = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (playerColliding && Input.GetKeyDown(KeyCode.E))
+        {
+            signText.SetActive(!signText.activeSelf);
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("hmmm");
-                signText.SetActive(true);
-            }
+            playerColliding = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            playerColliding = false;
         }
     }
 }

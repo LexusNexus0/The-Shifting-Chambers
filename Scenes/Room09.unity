@@ -1054,12 +1054,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Beware, in the room ahead lies riches you seek. However, taking those riches
-    will activate a terrible curse, the path you take to try and exit will not be
+    will activate a terrible curse. The path you take to try and exit will not be
     the same as the way you came in. This is your last and only warning, turn back
     now, the door has been opened for you.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6ae56775db6c635489a8a4347be65fb6, type: 2}
+  m_sharedMaterial: {fileID: -5624788694109589555, guid: 6ae56775db6c635489a8a4347be65fb6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1006013748
@@ -1192,8 +1192,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press 'e' to read
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6ae56775db6c635489a8a4347be65fb6, type: 2}
+  m_sharedMaterial: {fileID: -5624788694109589555, guid: 6ae56775db6c635489a8a4347be65fb6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1532,6 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signText: {fileID: 232231886}
+  playerColliding: 0
 --- !u!1 &2071451139
 GameObject:
   m_ObjectHideFlags: 0
