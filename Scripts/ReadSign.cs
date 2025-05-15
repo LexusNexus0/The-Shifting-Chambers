@@ -6,12 +6,19 @@ public class ReadSign : MonoBehaviour
 {
     public GameObject signText;
     public bool playerColliding = false;
+    public GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     void Update()
     {
         if (playerColliding && Input.GetKeyDown(KeyCode.E))
         {
             signText.SetActive(!signText.activeSelf);
+            player.GetComponent<PlayerMovement>().moveLocked = signText.activeSelf;
         }
     }
 

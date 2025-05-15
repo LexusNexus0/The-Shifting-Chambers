@@ -20,6 +20,7 @@ public class GoldTake : MonoBehaviour
         RoomManager.generateRandomDoorway();
         player.GetComponent<RandomManager>().isRandom = true;
         this.gameObject.SetActive(false);
+        player.GetComponent<PlayerMovement>().moveLocked = false;
     }
 
 
@@ -27,6 +28,7 @@ public class GoldTake : MonoBehaviour
     {
         GoldQuestion.SetActive(false);
         Debug.Log("Gold left");
+        player.GetComponent<PlayerMovement>().moveLocked = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,6 +38,7 @@ public class GoldTake : MonoBehaviour
         {
             GoldQuestion.SetActive(true);
             other.gameObject.transform.position = new Vector2(0, -2.5f);
+            other.GetComponent<PlayerMovement>().moveLocked = true;
         }
         
     }

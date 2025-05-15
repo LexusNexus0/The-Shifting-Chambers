@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public GameObject player;
     public string roomNumber = "";
     public bool enterRoom = false;
 
-    // Finish entering all the rooms from table
     public static string[,] rooms = {
         { "", "", "17L", "" },
         { "", "", "02L", "07U" }, 

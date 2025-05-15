@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     private Vector2 movementDirection;
     private Rigidbody2D player;
+    public bool moveLocked = false;
 
     void Awake()
     {
@@ -23,7 +24,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (!moveLocked)
+        {
+            movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        }
+        else
+        {
+            movementDirection = Vector2.zero;
+        }
 
         player.velocity = movementDirection * speed;
 
@@ -36,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName: "Room14");
             this.GetComponent<DoorWork>().rooomNum = 14;
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            moveLocked = !moveLocked;
         }
     }
 }
