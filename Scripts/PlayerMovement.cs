@@ -42,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
-            SceneManager.LoadScene(sceneName: "Room14");
-            this.GetComponent<DoorWork>().rooomNum = 14;
+            SceneManager.LoadScene(sceneName: "Room08");
+            this.GetComponent<DoorWork>().rooomNum = 8;
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
