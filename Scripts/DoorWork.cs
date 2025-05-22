@@ -7,29 +7,32 @@ using UnityEngine.SceneManagement;
 public class DoorWork : MonoBehaviour
 {
     public string location = string.Empty;
-    public int rooomNum = 0;
+    public int roomNum = 0;
     public string stringRoom = "";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "DoorLeft")
         {
-            location = RoomManager.rooms[rooomNum, 0];
+            location = RoomManager.rooms[roomNum, 0];
             LoadRoom();
         }
         else if (other.tag == "DoorUp")
         {
-            location = RoomManager.rooms[rooomNum, 1];
+            location = RoomManager.rooms[roomNum, 1];
             LoadRoom();
         }
         else if (other.tag == "DoorRight")
         {
-            location = RoomManager.rooms[rooomNum, 2];
+            location = RoomManager.rooms[roomNum, 2];
             LoadRoom();
         }
         else if (other.tag == "DoorDown")
         {
-            location = RoomManager.rooms[rooomNum, 3];
+            location = RoomManager.rooms[roomNum, 3];
+            Debug.Log(roomNum);
+            Debug.Log(SceneManager.GetActiveScene().name);
+            Debug.Log(location);
             LoadRoom();
         }
     }
@@ -37,7 +40,7 @@ public class DoorWork : MonoBehaviour
     private void LoadRoom()
     {
         stringRoom = "" + location[0] + location[1];
-        rooomNum = int.Parse(stringRoom);
+        roomNum = int.Parse(stringRoom);
 
         if (stringRoom != "08")
         {
@@ -74,6 +77,7 @@ public class DoorWork : MonoBehaviour
                 if (location[3].Equals('1'))
                 {
                     transform.position = new Vector3(-6, 3.75f, transform.position.z);
+                    Debug.Log("hmmmm");
                 }
                 else if (location[3].Equals('2'))
                 {

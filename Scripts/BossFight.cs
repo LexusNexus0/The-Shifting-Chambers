@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BossFight : MonoBehaviour
 {
@@ -13,10 +15,23 @@ public class BossFight : MonoBehaviour
     private Vector3 arm3pos = new Vector2(12.82f, -3.93f);
     private Vector3 arm4pos = new Vector2(-12.82f, -3.93f);
 
+    private bool arm1inuse = false;
+    private bool arm2inuse = false;
+    private bool arm3inuse = false;
+    private bool arm4inuse = false;
+
     public GameObject laser1;
     public GameObject laser2;
     private Color laserDim = new Color(1.0f, 0.5f, 0.5f, 0.7f);
     private Color laserFull = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+
+    private float fightTimer = 0.0f;
+    private string displayTime = "0:00";
+    private string prevTime = "0:00";
+    public TMP_Text displayTimer;
+    public float bossHealth = 100.0f;
+    public TMP_Text displayHealth;
+    public int activeBatteries = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +43,23 @@ public class BossFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fightTimer += Time.deltaTime;
+        DisplayTime();
+        if (prevTime != displayTime)
+        {
+            if (bossHealth < 100)
+            {
+                bossHealth += (5 * activeBatteries);
+            }
+
+            if (bossHealth > 100)
+            {
+                bossHealth = 100;
+            }
+            prevTime = displayTime;
+        }
+        displayHealth.text = "Boss Health: " + bossHealth.ToString();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             fireBall();
@@ -39,9 +71,13 @@ public class BossFight : MonoBehaviour
             {
                 case 1:
                     startLaser(laser1);
+                    arm1inuse = true;
+                    arm3inuse = true;
                     break;
                 case 2:
                     startLaser(laser2);
+                    arm2inuse = true;
+                    arm4inuse = true;
                     break;
             }
             
@@ -49,27 +85,39 @@ public class BossFight : MonoBehaviour
 
     }
 
+    private void DisplayTime()
+    {
+        int minutes = Mathf.FloorToInt(fightTimer / 60);
+        int seconds = Mathf.FloorToInt(fightTimer % 60);
+        displayTime = string.Format("{0}:{1:00}", minutes, seconds);
+        displayTimer.text = displayTime;
+    }
+
     public void fireBall()
     {
+        bossHealth -= 5;
         int ranNum = Random.Range(1, 6);
-        switch (ranNum)
+        if (ranNum == 1 && !arm1inuse)
         {
-            case 1:
-                fireLocation = arm1pos;
-                break;
-            case 2:
-                fireLocation = arm2pos;
-                break;
-            case 3:
-                fireLocation = arm3pos;
-                break;
-            case 4:
-                fireLocation = arm4pos;
-                break;
-            case 5:
-                fireLocation = transform.position;
-                break;
+            fireLocation = arm1pos;
         }
+        else if (ranNum == 2 && !arm2inuse)
+        {
+            fireLocation = arm2pos;
+        }
+        else if (ranNum == 3 && !arm3inuse)
+        {
+            fireLocation = arm3pos;
+        }
+        else if (ranNum == 4 && !arm4inuse)
+        {
+            fireLocation = arm4pos;
+        }
+        else
+        {
+            fireLocation = transform.position;
+        }
+
         Rigidbody2D fireBallClone = (Rigidbody2D)Instantiate(fireball, fireLocation, transform.rotation);
         Vector3 playerPos = player.transform.position - fireLocation;
         fireBallClone.velocity = new Vector2(playerPos.x, playerPos.y).normalized * fireballSpeed;
@@ -80,7 +128,7 @@ public class BossFight : MonoBehaviour
     {
         laser.GetComponent<Renderer>().material.color = laserDim;
         laser.SetActive(true);
-        StartCoroutine(DelayFire(3f, laser));
+        StartCoroutine(DelayFire(2.5f, laser));
     }
 
     public void fireLaser(GameObject laser)
@@ -92,5 +140,20 @@ public class BossFight : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         fireLaser(laser);
+    }
+
+    public void disableLaser(GameObject laser)
+    {
+        laser.SetActive(false);
+        if (laser == laser1)
+        {
+            arm1inuse = false;
+            arm3inuse = false;
+        }
+        else if (laser == laser2)
+        {
+            arm2inuse = false;
+            arm4inuse = false;
+        }
     }
 }
