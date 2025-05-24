@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 18f;
     private Vector2 movementDirection;
     private Rigidbody2D player;
     public bool moveLocked = false;

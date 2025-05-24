@@ -15,15 +15,15 @@ public class CameraMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x < 5 &&  player.transform.position.x > -5)
+        if (player.transform.position.x < 8.125f &&  player.transform.position.x > -8.125f)
         {
             transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         }
-        else if (player.transform.position.x > 5) {
-            transform.position = new Vector3(5, transform.position.y, transform.position.z);
+        else if (player.transform.position.x > 8.125f) {
+            transform.position = new Vector3(8.125f, transform.position.y, transform.position.z);
         }
-        else if (player.transform.position.x < -5) {
-            transform.position = new Vector3(-5, transform.position.y, transform.position.z);
+        else if (player.transform.position.x < -8.125f) {
+            transform.position = new Vector3(-8.125f, transform.position.y, transform.position.z);
         }
     }
 }

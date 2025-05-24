@@ -30,9 +30,6 @@ public class DoorWork : MonoBehaviour
         else if (other.tag == "DoorDown")
         {
             location = RoomManager.rooms[roomNum, 3];
-            Debug.Log(roomNum);
-            Debug.Log(SceneManager.GetActiveScene().name);
-            Debug.Log(location);
             LoadRoom();
         }
     }
@@ -77,7 +74,6 @@ public class DoorWork : MonoBehaviour
                 if (location[3].Equals('1'))
                 {
                     transform.position = new Vector3(-6, 3.75f, transform.position.z);
-                    Debug.Log("hmmmm");
                 }
                 else if (location[3].Equals('2'))
                 {
