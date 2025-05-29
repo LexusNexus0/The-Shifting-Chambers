@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 18f;
+    public float speed = 15f;
     private Vector2 movementDirection;
     private Rigidbody2D player;
     public bool moveLocked = false;
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName: "Room08");
             this.GetComponent<DoorWork>().roomNum = 8;
+            this.GetComponent<DoorWork>().inRoom8 = true;
         }
         if (Input.GetKeyDown(KeyCode.L))
         {

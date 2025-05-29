@@ -10,10 +10,10 @@ public class BossFight : MonoBehaviour
     public Rigidbody2D fireball;
     public float fireballSpeed = 2;
     private Vector3 fireLocation = Vector2.zero;
-    private Vector3 arm1pos = new Vector2(-12.82f, 3.93f);
-    private Vector3 arm2pos = new Vector2(12.82f, 3.93f);
-    private Vector3 arm3pos = new Vector2(12.82f, -3.93f);
-    private Vector3 arm4pos = new Vector2(-12.82f, -3.93f);
+    private Vector3 arm1pos = new Vector2(-20.65f, 5.65f);
+    private Vector3 arm2pos = new Vector2(20.65f, 5.65f);
+    private Vector3 arm3pos = new Vector2(20.65f, -5.65f);
+    private Vector3 arm4pos = new Vector2(-20.65f, -5.65f);
 
     private bool arm1inuse = false;
     private bool arm2inuse = false;
