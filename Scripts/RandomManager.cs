@@ -8,6 +8,7 @@ public class RandomManager : MonoBehaviour
 {
     public bool isRandom = false;
     private bool hasRan = true;
+    public bool KeyGotten = false;
     public string SceneName1;
     public string SceneName2;
 
@@ -41,10 +42,23 @@ public class RandomManager : MonoBehaviour
                     case "Room02":
                         GameObject.FindGameObjectWithTag("DoorRight").SetActive(false);
                         GameObject.FindGameObjectWithTag("DoorWall").SetActive(false);
+                        GameObject.Find("OpenRightDoor").SetActive(false);
                         break;
                 }
             }
 
+            if (!KeyGotten && SceneName1 == "Room18")
+            {
+                GameObject.Find("OpenRightDoor").SetActive(false);
+            }
+            else if (KeyGotten && SceneName1 == "Room18")
+            {
+                GameObject.Find("LockedRightDoor").SetActive(false);
+            }
+            else if (KeyGotten && SceneName1 == "Room01")
+            {
+                GameObject.FindGameObjectWithTag("Key").SetActive(false);
+            }
             hasRan = true;
         }
     }

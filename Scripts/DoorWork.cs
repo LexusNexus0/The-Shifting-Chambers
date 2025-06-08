@@ -103,6 +103,10 @@ public class DoorWork : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x - 8.125f, transform.position.y - 17.5f, transform.position.z);
             }
+            else if (prevDoor == "D")
+            {
+                transform.position = new Vector3(transform.position.x - 8.125f, transform.position.y + 17.5f, transform.position.z);
+            }
             SceneManager.LoadScene(sceneName: "Room" + location[0] + location[1]);
             inRoom8 = false;
         }
