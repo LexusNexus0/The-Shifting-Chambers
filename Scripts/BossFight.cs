@@ -8,6 +8,7 @@ public class BossFight : MonoBehaviour
 {
     public GameObject player;
     public Rigidbody2D fireball;
+    public Rigidbody2D miniFireball;
     public float fireballSpeed = 2;
     private Vector3 fireLocation = Vector2.zero;
     private Vector3 arm1pos = new Vector2(-20.65f, 5.65f);
@@ -32,6 +33,9 @@ public class BossFight : MonoBehaviour
     public float bossHealth = 100.0f;
     public TMP_Text displayHealth;
     public int activeBatteries = 4;
+
+    public List<GameObject> Doors = new() { };
+    public bool fightStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +67,8 @@ public class BossFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             fireBall();
+            fightStarted = !fightStarted;
+            ChangeDoorState();
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -154,6 +160,20 @@ public class BossFight : MonoBehaviour
         {
             arm2inuse = false;
             arm4inuse = false;
+        }
+    }
+
+    public void SprayFireballs(Vector3 armPos)
+    {
+
+    }
+
+    private void ChangeDoorState()
+    {
+        for (int i = 0; i < Doors.Count; i++)
+        {
+            Doors[i].GetComponent<Animator>().SetBool("BattleStart", fightStarted);
+            Doors[i].GetComponent<BoxCollider2D>().enabled = fightStarted;
         }
     }
 }

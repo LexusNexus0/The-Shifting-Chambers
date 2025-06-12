@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
             
             if (movementDirection.x < 0)
             {
-                transform.rotation = Quaternion.Euler(0f, 190f, 0f);
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             }
             else
             {
