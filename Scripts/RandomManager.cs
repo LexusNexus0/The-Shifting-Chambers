@@ -11,6 +11,7 @@ public class RandomManager : MonoBehaviour
     public bool KeyGotten = false;
     public string SceneName1;
     public string SceneName2;
+    public bool bossDead = false;
 
     void Update()
     {
@@ -32,6 +33,16 @@ public class RandomManager : MonoBehaviour
                         break;
                     case "Room05":
                         GameObject.FindGameObjectWithTag("Gold").SetActive(false);
+                        break;
+                    case "Room08":
+                        if (!bossDead)
+                        {
+                            GameObject.Find("BossBody").GetComponent<BossFight>().randomiserOn = true;
+                        }
+                        else
+                        {
+                            GameObject.Find("BossBody").GetComponent<BossFight>().bossDead = true;
+                        }
                         break;
                 }
             }
