@@ -1,0 +1,620 @@
+fileFormatVersion: 2
+guid: 3cf32cad88160694096b3496a162a285
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BossWaking_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3300
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a2973bdf29ce1479cfaefb58db19d7
+      internalID: 502526111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_1
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 3300
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae18a196b5aaf824ba9b33c3a35e7118
+      internalID: -547034164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_2
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 3300
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65daafbd158578d4b9da83a4e286bf80
+      internalID: -1637028138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_3
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 3300
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be92882f060b6e449acfa4d01939680b
+      internalID: -445439629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_4
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 3300
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a26e6fdeec9ddb4c9eb4356ddfc8068
+      internalID: -71569624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2475
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebe9b7567db22243af2e040e4b5cf3c
+      internalID: 1864445667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_6
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 2475
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c2dc507260dec4cb83f043cb34b219
+      internalID: -1219847504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_7
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 2475
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf8cb0b57e9fc2479f1eb474f2c7c89
+      internalID: -2038165727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_8
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 2475
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc73f8b8c2a78642b4fe80b4b8b79fe
+      internalID: 783977128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_9
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 2475
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a79c3b62fbb8c4091ec9cb5675c820
+      internalID: -184438629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1650
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568cca437999aa04fb4c29aa3d883f34
+      internalID: -21880482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_11
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1650
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d780471545e52f448965919667399c93
+      internalID: -1572998773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_12
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1650
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e247e3c6b72117449fdf105c5158a0b
+      internalID: 628620911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_13
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1650
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba011d43a6a3b7e44be0b52958b6dadb
+      internalID: 2055606068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_14
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 1650
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6dd077d78333542ab3bd2c519c15b0
+      internalID: -1545857041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 825
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd2d6e72093e0b4196129f4ccf8f791
+      internalID: 1401917652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_16
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 825
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d729e21a3165d44858d288286c198e
+      internalID: 1364293907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_17
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 825
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0adcc0074debc428c5e03032332226
+      internalID: -1189133394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_18
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 825
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e853e2f8287c44887ae938cd596b8c
+      internalID: -1032548164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_19
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 825
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec5c1c29f280634095e1f1a5549920e
+      internalID: -50471958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a043a7043282e14baedbdb8aeeda361
+      internalID: -1020900721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_21
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 0
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e287285bb8969f44b0a08368b0b1063
+      internalID: 1653354902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossWaking_22
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 0
+        width: 825
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b33645a8d17da43a0b8a343007bf4d
+      internalID: 1237800390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BossWaking_0: 502526111
+      BossWaking_1: -547034164
+      BossWaking_10: -21880482
+      BossWaking_11: -1572998773
+      BossWaking_12: 628620911
+      BossWaking_13: 2055606068
+      BossWaking_14: -1545857041
+      BossWaking_15: 1401917652
+      BossWaking_16: 1364293907
+      BossWaking_17: -1189133394
+      BossWaking_18: -1032548164
+      BossWaking_19: -50471958
+      BossWaking_2: -1637028138
+      BossWaking_20: -1020900721
+      BossWaking_21: 1653354902
+      BossWaking_22: 1237800390
+      BossWaking_3: -445439629
+      BossWaking_4: -71569624
+      BossWaking_5: 1864445667
+      BossWaking_6: -1219847504
+      BossWaking_7: -2038165727
+      BossWaking_8: 783977128
+      BossWaking_9: -184438629
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
