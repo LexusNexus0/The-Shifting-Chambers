@@ -44,6 +44,13 @@ public class RandomManager : MonoBehaviour
                             GameObject.Find("BossBody").GetComponent<BossFight>().bossDead = true;
                         }
                         break;
+                    case "Room17":
+                        if (bossDead)
+                        {
+                            GameObject.Find("ExitDoor").GetComponent<Animator>().SetBool("GameWon", bossDead);
+                            GameObject.Find("ExitDoor").GetComponent<BoxCollider2D>().enabled = false;
+                        }
+                        break;
                 }
             }
             else
@@ -58,13 +65,10 @@ public class RandomManager : MonoBehaviour
                 }
             }
 
-            if (!KeyGotten && SceneName1 == "Room18")
+            if (KeyGotten && SceneName1 == "Room18")
             {
-                GameObject.Find("OpenRightDoor").SetActive(false);
-            }
-            else if (KeyGotten && SceneName1 == "Room18")
-            {
-                GameObject.Find("LockedRightDoor").SetActive(false);
+                GameObject.Find("LockedRightDoor").GetComponent<Animator>().SetBool("KeyGotten", KeyGotten);
+                GameObject.Find("LockedRightDoor").GetComponent<BoxCollider2D>().enabled = false;
             }
             else if (KeyGotten && SceneName1 == "Room01")
             {

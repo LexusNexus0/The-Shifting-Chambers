@@ -8,9 +8,14 @@ public class DoorWork : MonoBehaviour
 {
     public string location = string.Empty;
     public bool inRoom8 = false;
-    public int roomNum = 0;
+    public int roomNum;
     public string stringRoom = "";
     private string prevDoor = "";
+
+    private void Start()
+    {
+        roomNum = 17;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,11 +37,16 @@ public class DoorWork : MonoBehaviour
             prevDoor = "R";
             LoadRoom();
         }
-        else if (other.tag == "DoorDown")
+        else if (other.tag == "DoorDown" && SceneManager.GetActiveScene().name != "Room17")
         {
             location = RoomManager.rooms[roomNum, 3];
             prevDoor = "D";
             LoadRoom();
+        }
+        else if (other.tag == "DoorDown" && SceneManager.GetActiveScene().name == "Room17")
+        {
+            this.gameObject.GetComponent<PlayerMovement>().moveLocked = true;
+            SceneManager.LoadScene(sceneName: "WinScreen");
         }
     }
 

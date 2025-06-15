@@ -64,6 +64,11 @@ public class BossFight : MonoBehaviour
 
     public GameObject playerHealthbar;
 
+    public TMP_Text helpText;
+    private string idea = "It looks like when the boss attacks it drains some of it's health. I wonder if those batteries are what's healing it...";
+    private string nice = "There we go! All the batteries have been destroyed! Now just to wait for it to drain all it's health.";
+    private string won = "The exit door has opened...";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -152,6 +157,11 @@ public class BossFight : MonoBehaviour
                 StartCoroutine(FinalAttack());
                 doneFinalAttack = true;
             }
+
+            if (activeBatteries == 1)
+            {
+                helpText.text = nice;
+            }
         }
 
         if (currentBossHealth <= 0  && !battleFinished)
@@ -165,11 +175,16 @@ public class BossFight : MonoBehaviour
                 fightStarted = false;
                 ChangeDoorState();
                 bigLaser.SetActive(false);
+                laser1.SetActive(false);
+                laser2.SetActive(false);
+                laser3.SetActive(false);
+                laser4.SetActive(false);
                 currentBossHealth = 0;
                 battleFinished = true;
                 player.GetComponent<RandomManager>().bossDead = true;
                 bossAnimator.SetBool("DeadBoss", bossDead);
                 StartCoroutine(RemoveArms());
+                helpText.text = won;
             }
         }
 
@@ -314,6 +329,7 @@ public class BossFight : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         laser.GetComponent<Renderer>().material.color = laserFull;
+        laser.GetComponent<BoxCollider2D>().enabled = true;
         lasersActive++;
         StartCoroutine(DepleteBossHealth());
         if (regening == null)
@@ -323,6 +339,7 @@ public class BossFight : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
         laser.SetActive(false);
+        laser.GetComponent<BoxCollider2D>().enabled = false;
         lasersActive--;
         int laserNum = laser.name[5] - '0';
         switch (laserNum)
@@ -386,12 +403,12 @@ public class BossFight : MonoBehaviour
         dummy.SetActive(false);
         playerHealthbar.SetActive(true);
         bossHeathBar.gameObject.SetActive(true);
-        player.GetComponentInChildren<PlayerHealth>().healthReady = true;
         // insert code to do with gems here
         player.GetComponent<PlayerMovement>().moveLocked = false;
         yield return new WaitForSeconds(1);
         fightStarted = true;
         playerSwitched = false;
+        helpText.text = idea;
     }
 
     private IEnumerator FireBigLaser()

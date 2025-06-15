@@ -14,22 +14,19 @@ public class PlayerHealth : MonoBehaviour
     public bool healthReady = false;
     public GameObject health;
     private Animator healthbarAnimator;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        healthbarAnimator = health.GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player");
     }
 
     private void Update()
     {
-        if (healthReady)
-        {
-            health = GameObject.Find("PlayerHealth");
-            healthbarAnimator = health.GetComponent<Animator>();
-            healthReady = false;
-        }
-    
+        transform.position = player.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,7 +40,9 @@ public class PlayerHealth : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                // Add death here
+                player.gameObject.GetComponent<PlayerMovement>().moveLocked = true;
+                currentHealth = 3;
+                SceneManager.LoadScene(sceneName: "DeathScreen");
             }
         }
 
