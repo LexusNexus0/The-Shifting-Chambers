@@ -46,7 +46,17 @@ public class DoorWork : MonoBehaviour
         else if (other.tag == "DoorDown" && SceneManager.GetActiveScene().name == "Room17")
         {
             this.gameObject.GetComponent<PlayerMovement>().moveLocked = true;
-            SceneManager.LoadScene(sceneName: "WinScreen");
+
+            if (this.gameObject.GetComponent<RandomManager>().doorOpen != true)
+            {
+                SceneManager.LoadScene(sceneName: "WinScreen");
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneName: "JustLeaveEndWin");
+            }
+            
+            GameObject.Find("PauseCanvas").GetComponent<PauseMenu>().inGame = false;
         }
     }
 
@@ -142,5 +152,7 @@ public class DoorWork : MonoBehaviour
                 }
             }
         }
+
+        this.gameObject.GetComponent<RandomManager>().hasRan = false;
     }
 }

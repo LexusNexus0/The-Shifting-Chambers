@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRandom: 0
+  hasRan: 1
   KeyGotten: 0
   SceneName1: 
   SceneName2: 

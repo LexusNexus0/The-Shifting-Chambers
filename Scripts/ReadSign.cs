@@ -7,6 +7,8 @@ public class ReadSign : MonoBehaviour
     public GameObject signText;
     public bool playerColliding = false;
     public GameObject player;
+    private bool hasRan = false;
+    public bool leaveRoom;
 
     private void Start()
     {
@@ -19,6 +21,12 @@ public class ReadSign : MonoBehaviour
         {
             signText.SetActive(!signText.activeSelf);
             player.GetComponent<PlayerMovement>().moveLocked = signText.activeSelf;
+
+            if (leaveRoom && !hasRan)
+            {
+                hasRan = true;
+                player.GetComponent<RandomManager>().doorOpen = true;
+            }
         }
     }
 

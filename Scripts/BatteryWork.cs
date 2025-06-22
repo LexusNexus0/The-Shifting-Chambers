@@ -19,6 +19,7 @@ public class BatteryWork : MonoBehaviour
         if (other.name == "Fireball(Clone)" && !isDestroyed)
         {
             batteryAnimator.SetBool("BatteryDestroyed", true);
+            other.gameObject.SetActive(false);
             isDestroyed = true;
             Boss.GetComponent<BossFight>().activeBatteries--;
         }

@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         player.velocity = movementDirection * speed;
 
-        if (Input.GetKeyDown(KeyCode.B))
+        /* if (Input.GetKeyDown(KeyCode.B))
         {
             SceneManager.LoadScene(sceneName: "Room05");
             this.GetComponent<DoorWork>().roomNum = 5;
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             moveLocked = !moveLocked;
-        }
+        } */
 
         playerAnimation.SetFloat("HorizontalMovement", Mathf.Abs(movementDirection.x));
         playerAnimation.SetFloat("VerticalMovement", movementDirection.y);

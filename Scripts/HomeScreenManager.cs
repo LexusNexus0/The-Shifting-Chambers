@@ -12,6 +12,7 @@ public class HomeScreenManager : MonoBehaviour
     {
         Instantiate(player, new Vector3(0, -5, 0), Quaternion.identity);
         SceneManager.LoadScene(sceneName: "Room17");
+        GameObject.Find("PauseCanvas").GetComponent<PauseMenu>().inGame = true;
     }
 
     public void showRulesTips()
@@ -44,15 +45,18 @@ public class HomeScreenManager : MonoBehaviour
     public void RestartBoss()
     {
         currentPlayer = GameObject.FindGameObjectWithTag("Player");
+        currentPlayer.GetComponent<RandomManager>().bossDead = false;
         currentPlayer.transform.position = new Vector3(0, 0, 0);
         currentPlayer.GetComponent<PlayerMovement>().moveLocked = false;
         SceneManager.LoadScene(sceneName: "Room08");
+        GameObject.Find("PauseCanvas").GetComponent<PauseMenu>().inGame = true;
     }
 
     private void ResetGame()
     {
         currentPlayer = GameObject.FindGameObjectWithTag("Player");
         SceneManager.MoveGameObjectToScene(currentPlayer, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.Find("PauseCanvas"), SceneManager.GetActiveScene());
         RoomManager.rooms = RoomManager.roomsTemplate;
         RoomManager.leftDoors = RoomManager.TLeftDoors;
         RoomManager.upDoors = RoomManager.TUpDoors;

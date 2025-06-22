@@ -8,7 +8,7 @@ public class RoomManager : MonoBehaviour
     public string roomNumber = "";
     public bool enterRoom = false;
 
-    public static string[,] roomsTemplate = {
+    public static readonly string[,] roomsTemplate = {
         { "", "", "17L", "" },
         { "", "", "02L", "07U" },
         { "01R", "", "03L", "08U1" },
@@ -54,10 +54,10 @@ public class RoomManager : MonoBehaviour
         { "18R", "", "", "" }
     };
 
-    public static List<string> TLeftDoors = new() { "02L", "03L", "07L", "09L", "12L", "17L", "18L" };
-    public static List<string> TUpDoors = new() { "07U", "08U1", "08U2", "09U", "10U", "12U", "14U", "16U", "17U" };
-    public static List<string> TRightDoors = new() { "01R", "02R", "06R", "08R", "11R", "16R", "17R" };
-    public static List<string> TDownDoors = new() { "01D", "02D", "04D", "05D", "06D", "08D", "11D", "13D", "14D" };
+    public static readonly List<string> TLeftDoors = new() { "02L", "03L", "07L", "09L", "12L", "17L", "18L" };
+    public static readonly List<string> TUpDoors = new() { "07U", "08U1", "08U2", "09U", "10U", "12U", "14U", "16U", "17U" };
+    public static readonly List<string> TRightDoors = new() { "01R", "02R", "06R", "08R", "11R", "16R", "17R" };
+    public static readonly List<string> TDownDoors = new() { "01D", "02D", "04D", "05D", "06D", "08D", "11D", "13D", "14D" };
 
     public static List<string> TSecretLDoors = new() { "11L", "14L", "15L" };
     public static List<string> TSecretRDoors = new() { "10R", "13R", "14R" };

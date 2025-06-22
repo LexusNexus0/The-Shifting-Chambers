@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 player.gameObject.GetComponent<PlayerMovement>().moveLocked = true;
                 currentHealth = 3;
+                GameObject.Find("PauseCanvas").GetComponent<PauseMenu>().inGame = false;
                 SceneManager.LoadScene(sceneName: "DeathScreen");
             }
         }

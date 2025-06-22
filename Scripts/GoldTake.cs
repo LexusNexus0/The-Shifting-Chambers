@@ -19,7 +19,9 @@ public class GoldTake : MonoBehaviour
         Debug.Log("Gold taken.");
         RoomManager.generateRandomDoorway();
         player.GetComponent<RandomManager>().isRandom = true;
-        this.gameObject.SetActive(false);
+        player.GetComponent<RandomManager>().doorOpen = false;
+        this.gameObject.GetComponent<Animator>().SetBool("GoldTaken", true);
+        this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = false;
         player.GetComponent<PlayerMovement>().moveLocked = false;
     }
 
@@ -37,7 +39,7 @@ public class GoldTake : MonoBehaviour
         if (other.tag == "Player")
         {
             GoldQuestion.SetActive(true);
-            other.gameObject.transform.position = new Vector2(0, -2.5f);
+            other.gameObject.transform.position = new Vector2(0, -3.8f);
             other.GetComponent<PlayerMovement>().moveLocked = true;
         }
         

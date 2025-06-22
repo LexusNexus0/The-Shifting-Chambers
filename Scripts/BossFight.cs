@@ -11,7 +11,6 @@ public class BossFight : MonoBehaviour
     public GameObject player;
     public GameObject dummy;
     public Rigidbody2D fireball;
-    public Rigidbody2D miniFireball;
     public float fireballSpeed;
     private Vector3 fireLocation = Vector2.zero;
     private Vector3 arm1pos = new Vector2(-20, 4.875f);
@@ -132,6 +131,7 @@ public class BossFight : MonoBehaviour
                 }
             }
 
+            // Boss attacks faster as the battle progresses
             if (battleTimer > 60)
             {
                 cooldown = 0.5f;
@@ -188,7 +188,7 @@ public class BossFight : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        /* if (Input.GetKeyDown(KeyCode.Space))
         {
             fireBall();
         }
@@ -199,7 +199,7 @@ public class BossFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             randomiserOn = !randomiserOn;
-        }
+        } */
 
         if (bossDead)
         {
